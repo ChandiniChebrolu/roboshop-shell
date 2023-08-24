@@ -34,11 +34,11 @@ validate $? "starting nginx"
 #validate $? "checking the default nginx server"
 rm -rf /usr/share/nginx/html/*
 validate $? "removing default content"
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
+curl -o /home/centos/roboshop-shell/tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
 validate $? "installing frontend artifact"
 cd /usr/share/nginx/html
 validate $? "moving in to html directory"
-unzip /tmp/web.zip
+unzip /home/centos/roboshop-shell/tmp/web.zip
 validate $? "unzipping the artifact"
 cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf 
 validate $? "copying to default.d"
