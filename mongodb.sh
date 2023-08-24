@@ -1,7 +1,8 @@
 #!/bin/bash
 Logdir=/tmp
+script_name=$0
 Date=$(date +%F:%H:%M:%S)
-Logfile=Logdir/$0-$Date.log
+Logfile=$Logdir/$0-$Date.log
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
