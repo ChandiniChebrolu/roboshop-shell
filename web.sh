@@ -38,7 +38,7 @@ curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
 validate $? "installing frontend artifact"
 cd /usr/share/nginx/html
 validate $? "moving in to html directory"
-unzip /home/centos/roboshop-shell/tmp/web.zip
+unzip /tmp/web.zip
 validate $? "unzipping the artifact"
 cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf 
 validate $? "copying to default.d"
