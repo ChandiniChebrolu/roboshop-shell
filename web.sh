@@ -18,15 +18,20 @@ validate() {
    echo "$2.. Success"
   fi
 }
-
-yum install nginx -y
-validate $? "installing nginx"
+yum list installed nginx
+if [ $?-ne 0 ]
+then
+ yum install nginx -y
+ validate $? "installing nginx"
+else
+ echo "already installed"
+fi
 systemctl enable nginx
 validate $? "enableing nginx"
 systemctl start nginx
 validate $? "starting nginx"
-http://34.226.222.125:80
-validate $? "checking the default nginx server"
+#http://34.226.222.125:80
+#validate $? "checking the default nginx server"
 rm -rf /usr/share/nginx/html/*
 validate $? "removing default content"
 curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
