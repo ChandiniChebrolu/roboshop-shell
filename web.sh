@@ -34,7 +34,7 @@ validate $? "starting nginx"
 #validate $? "checking the default nginx server"
 rm -rf /usr/share/nginx/html/*
 validate $? "removing default content"
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/frontend.zip
+curl -o /tmp/web.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
 validate $? "installing frontend artifact"
 cd /usr/share/nginx/html
 validate $? "moving in to html directory"
