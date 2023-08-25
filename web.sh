@@ -25,6 +25,7 @@ then
  validate $? "installing nginx"
 else
  echo "already installed"
+ exit 1
 fi
 systemctl enable nginx
 validate $? "enableing nginx"
