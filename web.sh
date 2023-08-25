@@ -19,7 +19,7 @@ validate() {
   fi
 }
 yum list installed nginx
-if [ $?-ne 0 ]
+if [ $? -ne 0 ]
 then
  yum install nginx -y
  validate $? "installing nginx"
