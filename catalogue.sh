@@ -51,6 +51,6 @@ validate $? "copying mongo.repo"
 
 yum install mongodb-org-shell -y &>> $Logfile
 validate $? "installing mongo client"
-mongo --host 34.226.222.125 </app/schema/catalogue.js &>> $Logfile
+mongo --host 54.81.178.33 </app/schema/catalogue.js &>> $Logfile
 validate $? "loading catalogue data in to mongodb"
 
